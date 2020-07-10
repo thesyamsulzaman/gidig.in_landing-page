@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let navBarToggle = document.getElementById("js-navbar-toggle");
 
   navBarToggle.addEventListener("click", function () {
-    //mainNav.classList.toggle(".nav__list--active");
-    mainNav.classList.toggle("active");
+    mainNav.classList.toggle("nav__list--active");
   });
-
-  Resources;
 });

@@ -3,13 +3,14 @@
 /*----------------*/
 @font-face {
   font-family: "HelveticaNowDisplay";
-  src: url("./assets/font/HelveticaNowDisplay-Medium.ttf");
+  src: url("./assets/font/HelveticaNowDisplay-Regular.ttf");
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /*border:1px solid white;*/
+  /*border: 1px solid white;*/
 }
 
 /*----------------*/
@@ -18,8 +19,23 @@
 
 a {
   font-family: HelveticaNowDisplay;
+  font-weight: 200;
   text-decoration: none;
   color: white;
+}
+
+li {
+  list-style: none;
+}
+
+/*----------------*/
+/*     LAYOUT     */
+/*----------------*/
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /*----------------*/
@@ -27,115 +43,59 @@ a {
 /*----------------*/
 
 header {
-  background-color: #0e1929;
+  background: #0e1929;
   text-align: left;
-}
-
-/*.nav*/
-.navbar {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   font-size: 18px;
-  background-color: #0e1929;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding-bottom: 10px;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav__toggle {
+  position: absolute;
+  top: 0.64em;
+  right: 0.1em;
 }
 
 .nav__logo {
   width: 120px;
   height: 45px;
 }
-
-
-/*.nav__list*/
-.main-nav {
-  list-style-type: none;
+.nav__list {
   display: none;
 }
 
-/*.nav__list__item*/
-.nav-links,
-.logo {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/*.nav__list__item*/
-.main-nav li {
-  text-align: center;
-  margin: 15px auto;
-}
-
-/*.nav__logo*/
-.logo {
-  display: inline-block;
-  font-size: 22px;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-/*.nav__toggle*/
-.navbar-toggle {
-  position: absolute;
-  top: 22px;
-  right: 20px;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
-}
-
-/*.nav__list--active*/
-.active {
+.nav__list--active {
   display: block;
 }
 
+.nav__list__item {
+  text-align: center;
+  margin: 1.2em auto;
+}
+
 @media screen and (min-width: 768px) {
-  /*.nav*/
-  .navbar {
+  .nav {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 0;
-    height: 70px;
     align-items: center;
   }
 
-  /*.nav__list*/
-  .main-nav {
+  .nav__list {
     display: flex;
-    margin-right: 30px;
-    flex-direction: row;
-    justify-content: flex-end;
   }
 
-  /*nav__list__item*/
-  .main-nav li {
-    margin: 0;
+  .nav__list__item {
+    margin-left: 1.2em;
   }
 
-
-  .nav-links {
-    margin-left: 40px;
-  }
-
-  .logo {
-     margin-top: 7px;  
-  }
-
-  .navbar-toggle {
+  .nav__toggle {
     display: none;
   }
-
-  .logo:hover,
-  .nav-links:hover {
-    color: rgba(255, 255, 255, 1);
-  }
 }
-
-
-
-Resources
-
-/*Navbar*/
 
