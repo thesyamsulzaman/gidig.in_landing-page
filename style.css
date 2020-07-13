@@ -28,6 +28,17 @@ li {
   list-style: none;
 }
 
+h1 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: white;
+  font-family: HelveticaNowDisplay;
+}
+p {
+  font-size: 0.82rem;
+  font-family: HelveticaNowDisplay;
+}
+
 /*----------------*/
 /*     LAYOUT     */
 /*----------------*/
@@ -43,50 +54,119 @@ li {
 /*----------------*/
 
 header {
-  background: #0e1929;
   text-align: left;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   font-size: 18px;
+  z-index: 2;
 }
 
 .nav {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .nav__toggle {
+  top: 25px;
   position: absolute;
-  top: 0.64em;
-  right: 0.1em;
 }
 
-.nav__logo {
-  width: 120px;
-  height: 45px;
-}
 .nav__list {
   display: none;
 }
 
-.nav__list--active {
-  display: block;
+.nav__list--one {
+  order: 1;
+}
+.nav__list--two {
+  order: 2;
 }
 
 .nav__list__item {
-  text-align: center;
-  margin: 1.2em auto;
+  margin: 0.72em 0;
+}
+
+.nav__logo {
+  width: 190px;
+  height: 70px;
+}
+
+.nav__list--toggle {
+  display: block;
+}
+
+/*---------------*/
+/*     HERO     */
+/*-------------*/
+.hero {
+  background-image: url("./assets/img/4k-3840-x-2160-wallpapers-themefoxx (270).jpg");
+  height: 100vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+}
+
+.hero__text {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.hero__cta {
+  padding: 10px 40px 10px 40px;
+  border: 1px solid white;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.hero .container {
+  height: 40vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.82rem;
+  }
+  p {
+    font-size: 0.82rem;
+  }
+
+  /*----------------*/
+  /*     NAVBAR     */
+  /*----------------*/
   .nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
 
   .nav__list {
+    display: block;
+  }
+  .nav__list--one {
+    order: 0;
+    display: flex;
+  }
+  .nav__list--two {
+    order: 0;
     display: flex;
   }
 
@@ -98,4 +178,3 @@ header {
     display: none;
   }
 }
-
