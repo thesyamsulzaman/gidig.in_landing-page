@@ -10,7 +10,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /*border: 1px solid white;*/
+  /*border: 1px solid magenta;*/
 }
 
 /*----------------*/
@@ -102,11 +102,27 @@ header {
 /*     HERO     */
 /*-------------*/
 .hero {
-  background-image: url("./assets/img/4k-3840-x-2160-wallpapers-themefoxx (270).jpg");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
   height: 100vh;
-  background-size: 100%;
+  width: 100%;
+}
+.hero::before {
+  background-image: url("./assets/img/4k-3840-x-2160-wallpapers-themefoxx (270).jpg");
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  content: "";
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  will-change: transform;
 }
 .hero__overlay {
   position: absolute;
@@ -124,6 +140,8 @@ header {
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: bold;
+  padding: 0 0.5em;
 }
 .hero__cta {
   padding: 10px 40px 10px 40px;
@@ -133,11 +151,75 @@ header {
 }
 
 .hero .container {
-  height: 40vh;
+  height: 200px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
+}
+
+/*---------------*/
+/*   SERVICE    */
+/*-------------*/
+
+.service {
+  height: auto;
+  background-color: black;
+  position: relative;
+}
+
+.service__float {
+  margin: 0 auto;
+  top: -20vh;
+  width: 85vw;
+  height: auto;
+  position: relative;
+  border-radius: 22px;
+  border: 1px solid white;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 2em 0;
+}
+
+.service__float .container h1 {
+  font-size: 1.3rem;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.service__container__header {
+  font-weight: bold;
+  padding-bottom: 0.5em;
+  border-bottom: 0.1px solid black;
+}
+.service__container__items {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.service__container__item {
+  min-height: 380px;
+  max-height: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.service__container__item h1 {
+  font-size: 1.2rem;
+}
+
+/*---------------*/
+/* TESTIMONIAL  */
+/*-------------*/
+
+.testimonial {
+  height: 100vh;
+  position: relative;
+  background-color: #259b9a;
 }
 
 @media screen and (min-width: 768px) {
@@ -176,5 +258,16 @@ header {
 
   .nav__toggle {
     display: none;
+  }
+
+  .hero .container {
+    height: 250px;
+  }
+
+  .service__container__items {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    justify-items: center;
   }
 }
