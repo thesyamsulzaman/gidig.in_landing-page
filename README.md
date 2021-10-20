@@ -1,3 +1,3 @@
-# gidig.in_landing-page
+# Screenshot
 
-Built using HTML, CSS and Vanilla Javascript
+![Homepage](./ss.png)
